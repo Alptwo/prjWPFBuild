@@ -1,0 +1,56 @@
+﻿<Window x:Class="prjWPFBuild.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:prjWPFBuild"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel 
+        x:Name="FileDropPanel"
+        AllowDrop="True"
+        Background="Gray"
+        Drop="FileDropPanel_Drop" 
+        Margin="162,215,180,72">
+        <Canvas>
+            <Label 
+                x:Name="lblFileName"
+                Content="Dosyanızı buraya surukleyin" 
+                Height="36" 
+                Canvas.Left="139" 
+                Canvas.Top="52"/>
+            <Button 
+                x:Name="btnCalistir"
+                Content="Calistir" 
+                Click="btnCalistir_Click"
+                Canvas.Left="125" 
+                Canvas.Top="170" 
+                Width="187" 
+                Height="22"/>
+            <TextBox 
+                x:Name="txtOld"
+                Height="20" 
+                TextWrapping="Wrap" 
+                Text="" 
+                Canvas.Left="66" 
+                Canvas.Top="-153" 
+                Width="386"/>
+            <TextBox 
+                x:Name="txtNew"
+                Height="20" 
+                TextWrapping="Wrap" 
+                Text=""
+                Canvas.Left="66" 
+                Canvas.Top="-109" 
+                Width="386"/>
+            <Label 
+                Content="Old Text:" 
+                Canvas.Top="-157"/>
+            <Label 
+                Content="New Text:"
+                Canvas.Top="-113"
+                Width="61"/>
+        </Canvas>
+        
+    </StackPanel>
+</Window>

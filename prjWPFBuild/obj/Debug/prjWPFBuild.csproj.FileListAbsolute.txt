@@ -1,0 +1,15 @@
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\bin\Debug\prjWPFBuild.exe.config
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\bin\Debug\prjWPFBuild.exe
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\bin\Debug\prjWPFBuild.pdb
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\obj\Debug\prjWPFBuild.csproj.AssemblyReference.cache
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\obj\Debug\App.g.cs
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\obj\Debug\prjWPFBuild_MarkupCompile.cache
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\obj\Debug\prjWPFBuild_MarkupCompile.lref
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\obj\Debug\prjWPFBuild.g.resources
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\obj\Debug\prjWPFBuild.Properties.Resources.resources
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\obj\Debug\prjWPFBuild.csproj.GenerateResource.cache
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\obj\Debug\prjWPFBuild.csproj.CoreCompileInputs.cache
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\obj\Debug\prjWPFBuild.exe
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\obj\Debug\prjWPFBuild.pdb
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\obj\Debug\View\MainWindow.g.cs
+C:\Users\alptu\source\repos\prjWPFBuild\prjWPFBuild\obj\Debug\View\MainWindow.baml
