@@ -78,6 +78,7 @@ namespace prjWPFBuild
             else
             {
                 Txt = new clsText(txtOld, txtNew);
+                string allText = "";
                 foreach (string file in Filecls.filepath)
                 {
                     Console.WriteLine(file);
@@ -88,35 +89,43 @@ namespace prjWPFBuild
                         StreamReader sr = new StreamReader(stream);
                         StreamWriter sw = new StreamWriter(stream);
                         string contents;
-                        string pattern = String.Format(@"\b{0}\b", txtOld.Text); ;
+                        string pattern = String.Format(@"\b{0}\b", txtOld.Text);
+                        string oldContents = "";
                         //string replace = txtNew.Text;
-                        while((contents = sr.ReadLine()) != null)
+                        while ((contents = sr.ReadLine()) != null)
                         {
                             Console.WriteLine(pattern);
                             Console.WriteLine(contents);
-                            if (Regex.IsMatch(contents,pattern))
+
+                            allText = allText + "\n" + contents;
+
+                            if (Regex.IsMatch(contents, pattern))
                             {
-                                
-                                sw.WriteLine(Regex.Replace(contents, pattern, txtNew.Text));
-                                //sw.WriteLine(contents.Replace(txtOld.Text, txtNew.Text));
+
                                 contents = Regex.Replace(contents, pattern, txtNew.Text);
 
-                                
+
 
 
 
 
                                 Console.WriteLine(contents);
-                                
+
                                 //Regex.Replace(contents, pattern, replace);
-                                break;
+
+                                
                             }
-                            
+                            if (contents == oldContents)
+                                break;
+                            oldContents = contents;
                         }
+                        Console.WriteLine(allText);
 
 
+
+
+                        allText = "";
                     }
-
                 }
                 MessageBox.Show("İslem tamamlandi!");
             }
