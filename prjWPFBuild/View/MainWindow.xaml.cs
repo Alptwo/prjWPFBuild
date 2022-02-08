@@ -83,6 +83,8 @@ namespace prjWPFBuild
                 {
                     Console.WriteLine(file);
                     
+                    
+
                     using (var stream = System.IO.File.Open(file, FileMode.Open, FileAccess.ReadWrite))
                     {
 
@@ -98,15 +100,11 @@ namespace prjWPFBuild
                             Console.WriteLine(contents);
 
                             allText = allText + "\n" + contents;
-
+                            /*
                             if (Regex.IsMatch(contents, pattern))
                             {
 
                                 contents = Regex.Replace(contents, pattern, txtNew.Text);
-
-
-
-
 
 
                                 Console.WriteLine(contents);
@@ -114,18 +112,36 @@ namespace prjWPFBuild
                                 //Regex.Replace(contents, pattern, replace);
 
                                 
-                            }
+                            }*/
                             if (contents == oldContents)
                                 break;
                             oldContents = contents;
                         }
                         Console.WriteLine(allText);
+                        
+                        
+                        if (Regex.IsMatch(allText, pattern))
+                        {
+                            //buraya silme işlemi yapılcak
+
+                            //file.Replace()
 
 
 
+
+                            //sw.Write(Regex.Replace(allText, pattern, txtNew.Text));
+                            // sw.Write(file, Regex.Replace(allText, pattern, txtNew.Text));
+                            File.WriteAllText(file, allText);
+                        }
+                        
 
                         allText = "";
                     }
+
+
+
+
+
                 }
                 MessageBox.Show("İslem tamamlandi!");
             }
