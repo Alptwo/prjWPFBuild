@@ -131,7 +131,7 @@ namespace prjWPFBuild
 
                             //sw.Write(Regex.Replace(allText, pattern, txtNew.Text));
                             // sw.Write(file, Regex.Replace(allText, pattern, txtNew.Text));
-                            File.WriteAllText(file, allText);
+                            //File.WriteAllText(file, allText);
                         }
                         
 
