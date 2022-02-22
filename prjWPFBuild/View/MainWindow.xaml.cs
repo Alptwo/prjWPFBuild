@@ -19,9 +19,6 @@ using System.Text.RegularExpressions;
 
 namespace prjWPFBuild
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -51,22 +48,27 @@ namespace prjWPFBuild
 
                 foreach (string file in filepath)
                 {
+                    //yanlislik cikiyor burada .sln dosyasi bulamiyor file'da
                     if (file.Contains(".sln"))
                     {
                         isTrueFile = true;
                     }
-
-                    if (isTrueFile == false)
+                    else
                     {
-                        
+                        isTrueFile = false;
+                    }
+                }
+                if (isTrueFile == false)
+                {
                         filepath = null;
                         fileName = "Dosyanizi buraya surukleyin";
                         lblFileName.Content = fileName;
                         files = null;
                         MessageBox.Show("Dosya tipi desteklenmiyor!");
-                        break;
-                    }
                 }
+
+
+
             }
         }
         private void btnCalistir_Click(object sender, RoutedEventArgs e)
