@@ -1,21 +1,7 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Net;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
+﻿using System;
 using System.IO;
-using System.Threading;
 using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace prjWPFBuild
 {
@@ -46,34 +32,36 @@ namespace prjWPFBuild
 
                 Filecls = new clsFile(files, filepath);
 
+                string fileExt;
+
                 foreach (string file in filepath)
                 {
                     //yanlislik cikiyor burada .sln dosyasi bulamiyor file'da
-                    if (file.Contains(".sln"))
+                    fileExt = System.IO.Path.GetExtension(file);
+                    if (fileExt == ".sln")
                     {
                         isTrueFile = true;
+                        break;
                     }
                     else
                     {
                         isTrueFile = false;
                     }
+                    Console.WriteLine(file);
                 }
                 if (isTrueFile == false)
                 {
-                        filepath = null;
-                        fileName = "Dosyanizi buraya surukleyin";
-                        lblFileName.Content = fileName;
-                        files = null;
-                        MessageBox.Show("Dosya tipi desteklenmiyor!");
+                    filepath = null;
+                    fileName = "Dosyanizi buraya surukleyin";
+                    lblFileName.Content = fileName;
+                    files = null;
+                    MessageBox.Show("Dosya tipi desteklenmiyor!");
                 }
-
-
-
             }
         }
         private void btnCalistir_Click(object sender, RoutedEventArgs e)
         {
-            if(txtOld.Text == "" || txtNew.Text == "")
+            if (txtOld.Text == "" || txtNew.Text == "")
             {
                 MessageBox.Show("Yeni ve eski bölümlerinin ikisi de dolu olmalı");
             }
@@ -84,8 +72,6 @@ namespace prjWPFBuild
                 foreach (string file in Filecls.filepath)
                 {
                     Console.WriteLine(file);
-                    
-                    
 
                     using (var stream = System.IO.File.Open(file, FileMode.Open, FileAccess.ReadWrite))
                     {
@@ -120,8 +106,8 @@ namespace prjWPFBuild
                             oldContents = contents;
                         }
                         Console.WriteLine(allText);
-                        
-                        
+
+
                         if (Regex.IsMatch(allText, pattern))
                         {
                             //buraya silme işlemi yapılcak
@@ -135,14 +121,10 @@ namespace prjWPFBuild
                             // sw.Write(file, Regex.Replace(allText, pattern, txtNew.Text));
                             //File.WriteAllText(file, allText);
                         }
-                        
+
 
                         allText = "";
                     }
-
-
-
-
 
                 }
                 MessageBox.Show("İslem tamamlandi!");
