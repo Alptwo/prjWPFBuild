@@ -12,7 +12,6 @@ namespace prjWPFBuild
             InitializeComponent();
         }
 
-        clsText Txt;
         clsFile Filecls;
 
         private void FileDropPanel_Drop(object sender, DragEventArgs e)
@@ -36,7 +35,6 @@ namespace prjWPFBuild
 
                 foreach (string file in filepath)
                 {
-                    //yanlislik cikiyor burada .sln dosyasi bulamiyor file'da
                     fileExt = System.IO.Path.GetExtension(file);
                     if (fileExt == ".sln")
                     {
@@ -59,6 +57,7 @@ namespace prjWPFBuild
                 }
             }
         }
+
         private void btnCalistir_Click(object sender, RoutedEventArgs e)
         {
             if (txtOld.Text == "" || txtNew.Text == "")
@@ -67,65 +66,17 @@ namespace prjWPFBuild
             }
             else
             {
-                Txt = new clsText(txtOld, txtNew);
-                string allText = "";
+                string text;
+                string pattern = String.Format(@"\b{0}\b", txtOld.Text);
                 foreach (string file in Filecls.filepath)
                 {
-                    Console.WriteLine(file);
+                    text = File.ReadAllText(file);
 
-                    using (var stream = System.IO.File.Open(file, FileMode.Open, FileAccess.ReadWrite))
+                    if(Regex.IsMatch(text, pattern))
                     {
-
-                        StreamReader sr = new StreamReader(stream);
-                        StreamWriter sw = new StreamWriter(stream);
-                        string contents;
-                        string pattern = String.Format(@"\b{0}\b", txtOld.Text);
-                        string oldContents = "";
-                        //string replace = txtNew.Text;
-                        while ((contents = sr.ReadLine()) != null)
-                        {
-                            Console.WriteLine(pattern);
-                            Console.WriteLine(contents);
-
-                            allText = allText + "\n" + contents;
-                            /*
-                            if (Regex.IsMatch(contents, pattern))
-                            {
-
-                                contents = Regex.Replace(contents, pattern, txtNew.Text);
-
-
-                                Console.WriteLine(contents);
-
-                                //Regex.Replace(contents, pattern, replace);
-
-                                
-                            }*/
-                            if (contents == oldContents)
-                                break;
-                            oldContents = contents;
-                        }
-                        Console.WriteLine(allText);
-
-
-                        if (Regex.IsMatch(allText, pattern))
-                        {
-                            //buraya silme işlemi yapılcak
-
-                            //file.Replace()
-
-
-
-
-                            //sw.Write(Regex.Replace(allText, pattern, txtNew.Text));
-                            // sw.Write(file, Regex.Replace(allText, pattern, txtNew.Text));
-                            //File.WriteAllText(file, allText);
-                        }
-
-
-                        allText = "";
+                        text = text.Replace(txtOld.Text, txtNew.Text);
+                        File.WriteAllText(file, text);
                     }
-
                 }
                 MessageBox.Show("İslem tamamlandi!");
             }

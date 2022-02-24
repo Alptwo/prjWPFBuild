@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\prjWPFBuild",
-    "\\prjWPFBuild\\Model",
-    "\\prjWPFBuild\\obj",
-    "\\prjWPFBuild\\Properties",
-    "\\prjWPFBuild\\View"
+    ""
   ],
-  "SelectedNode": "\\prjWPFBuild\\prjWPFBuild.csproj",
+  "SelectedNode": "\\prjWPFBuild.sln",
   "PreviewInSolutionExplorer": false
 }
