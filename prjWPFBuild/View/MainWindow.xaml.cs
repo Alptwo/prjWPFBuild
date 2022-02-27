@@ -55,11 +55,19 @@ namespace prjWPFBuild
                     files = null;
                     MessageBox.Show("Dosya tipi desteklenmiyor!");
                 }
+                if(isTrueFile)
+                {
+                    string sourcepath = files[0];
+                    string targetpath = files[0] + "Copied";
+
+                    //File.Copy(sourcepath, targetpath);
+                }
             }
         }
 
         private void btnCalistir_Click(object sender, RoutedEventArgs e)
         {
+
             if (txtOld.Text == "" || txtNew.Text == "")
             {
                 MessageBox.Show("Yeni ve eski bölümlerinin ikisi de dolu olmalı");
