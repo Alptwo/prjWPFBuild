@@ -60,7 +60,16 @@ namespace prjWPFBuild
                     string sourcepath = files[0];
                     string targetpath = files[0] + "Copied";
 
-                    //File.Copy(sourcepath, targetpath);
+                    foreach (string dirPath in Directory.GetDirectories(sourcepath, "*", SearchOption.AllDirectories))
+                    {
+                        Directory.CreateDirectory(dirPath.Replace(sourcepath, targetpath));
+                    }
+
+                    //Copy all the files & Replaces any files with the same name
+                    foreach (string newPath in Directory.GetFiles(sourcepath, "*.*", SearchOption.AllDirectories))
+                    {
+                        File.Copy(newPath, newPath.Replace(sourcepath, targetpath), true);
+                    }
                 }
             }
         }
