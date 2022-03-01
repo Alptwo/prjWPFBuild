@@ -70,6 +70,8 @@ namespace prjWPFBuild
                     {
                         File.Copy(newPath, newPath.Replace(sourcepath, targetpath), true);
                     }
+                    string[] copiedfilepath = Directory.GetFiles(targetpath, "*.*", SearchOption.AllDirectories);
+                    Filecls.filepath = copiedfilepath;
                 }
             }
         }
