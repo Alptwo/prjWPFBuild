@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows;
+using System.Diagnostics;
 
 namespace prjWPFBuild
 {
@@ -29,7 +30,7 @@ namespace prjWPFBuild
 
                 bool isTrueFile = false;
 
-                Filecls = new clsFile(files, filepath);
+                Filecls = new clsFile(files, filepath, "");
 
                 string fileExt;
 
@@ -39,6 +40,7 @@ namespace prjWPFBuild
                     if (fileExt == ".sln")
                     {
                         isTrueFile = true;
+                        Filecls.slnfilepath = file;
                         break;
                     }
                     else
@@ -97,6 +99,15 @@ namespace prjWPFBuild
                         File.WriteAllText(file, text);
                     }
                 }
+
+                var msbuild_path = "";
+
+                txtMSBuildPath.Text = msbuild_path;
+
+                var solution_path = Filecls.slnfilepath;
+
+                Process.Start(msbuild_path, solution_path);
+
                 MessageBox.Show("İslem tamamlandi!");
             }
         }

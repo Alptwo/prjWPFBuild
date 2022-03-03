@@ -48,9 +48,21 @@
                 Canvas.Top="-157"/>
             <Label 
                 Content="New Text:"
-                Canvas.Top="-113"
-                Width="61"/>
+                Canvas.Top="-109"
+                Width="61" Canvas.Left="-5"/>
+            <Label
+                Content="MSBuild Path:"
+                Canvas.Top="-65" Canvas.Left="-27"/>
+            <TextBox
+                x:Name="txtMSBuildPath"
+                Height="20" 
+                TextWrapping="Wrap" 
+                Text="" 
+                Canvas.Left="66" 
+                Canvas.Top="-65" 
+                Width="386"/>
+
         </Canvas>
-        
+
     </StackPanel>
 </Window>

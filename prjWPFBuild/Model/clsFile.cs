@@ -20,11 +20,13 @@ class clsFile
 {
     private static string[] _files;
     private static string[] _filepath;
+    private static string _slnfilepath;
 
-    public clsFile(string[] files,string[] filepath)
+    public clsFile(string[] files,string[] filepath, string slnfilepath)
     {
         _files = files;
         _filepath = filepath;
+        _slnfilepath = slnfilepath;
     }
 
     public string[] files
@@ -51,5 +53,16 @@ class clsFile
         }
     }
 
+    public string slnfilepath
+    {
+        get
+        {
+            return _slnfilepath;
+        }
+        set
+        {
+            _slnfilepath = value;
+        }
+    }
 }
 

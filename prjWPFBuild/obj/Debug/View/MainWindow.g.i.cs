@@ -80,6 +80,14 @@ namespace prjWPFBuild {
         #line default
         #line hidden
         
+        
+        #line 57 "..\..\..\View\MainWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox txtMSBuildPath;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -136,6 +144,9 @@ namespace prjWPFBuild {
             return;
             case 5:
             this.txtNew = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 6:
+            this.txtMSBuildPath = ((System.Windows.Controls.TextBox)(target));
             return;
             }
             this._contentLoaded = true;
