@@ -20,13 +20,19 @@
                 Canvas.Left="139" 
                 Canvas.Top="52"/>
             <Button 
-                x:Name="btnCalistir"
-                Content="Calistir" 
-                Click="btnCalistir_Click"
-                Canvas.Left="125" 
+                x:Name="btnDegistir"
+                Content="Metin degistir" 
+                Click="btnDegistir_Click" 
                 Canvas.Top="170" 
                 Width="187" 
                 Height="22"/>
+            <Button 
+                x:Name="btnCalistir"
+                Content="Calistir"
+                Click="btnCalistir_Click"
+                Canvas.Top="170"
+                Width="187"
+                Height="22" Canvas.Left="265"/>
             <TextBox 
                 x:Name="txtOld"
                 Height="20" 

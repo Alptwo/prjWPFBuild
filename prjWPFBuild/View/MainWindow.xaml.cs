@@ -78,7 +78,7 @@ namespace prjWPFBuild
             }
         }
 
-        private void btnCalistir_Click(object sender, RoutedEventArgs e)
+        private void btnDegistir_Click(object sender, RoutedEventArgs e)
         {
 
             if (txtOld.Text == "" || txtNew.Text == "")
@@ -99,17 +99,23 @@ namespace prjWPFBuild
                         File.WriteAllText(file, text);
                     }
                 }
-
+                
                 var msbuild_path = "";
 
                 txtMSBuildPath.Text = msbuild_path;
 
                 var solution_path = Filecls.slnfilepath;
 
-                Process.Start(msbuild_path, solution_path);
+               // Process.Start(msbuild_path, solution_path);
 
-                MessageBox.Show("İslem tamamlandi!");
+                MessageBox.Show("İslem tamamlandi! İsterseniz başka bir metin degistirebilirsiniz");
+                
             }
+        }
+
+        private void btnCalistir_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

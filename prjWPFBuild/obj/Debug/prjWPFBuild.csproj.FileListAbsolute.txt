@@ -28,3 +28,7 @@ C:\Users\Alptugaltin\Source\Repos\Alptwo\prjWPFBuild\prjWPFBuild\obj\Debug\prjWP
 C:\Users\Alptugaltin\Source\Repos\Alptwo\prjWPFBuild\prjWPFBuild\obj\Debug\prjWPFBuild.csproj.CoreCompileInputs.cache
 C:\Users\Alptugaltin\Source\Repos\Alptwo\prjWPFBuild\prjWPFBuild\obj\Debug\prjWPFBuild.exe
 C:\Users\Alptugaltin\Source\Repos\Alptwo\prjWPFBuild\prjWPFBuild\obj\Debug\prjWPFBuild.pdb
+C:\Users\Alptugaltin\source\repos\Alptwo\prjWPFBuild\prjWPFBuild\bin\Debug\prjWPFBuild.exe.manifest
+C:\Users\Alptugaltin\source\repos\Alptwo\prjWPFBuild\prjWPFBuild\bin\Debug\prjWPFBuild.application
+C:\Users\Alptugaltin\source\repos\Alptwo\prjWPFBuild\prjWPFBuild\obj\Debug\prjWPFBuild.exe.manifest
+C:\Users\Alptugaltin\source\repos\Alptwo\prjWPFBuild\prjWPFBuild\obj\Debug\prjWPFBuild.application
